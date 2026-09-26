@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador Vue 3</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="https://bootswatch.com/5/brite/bootstrap.min.css">
+</head>
+<body>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            margin: 0;
+            padding: 0; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+        }
+
+        #app{
+            text-align: center;
+            padding: 25px;
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(3, 55, 166, 0.15);
+            background-color: white;
+        }
+
+        h1, p{
+            color: #000;
+        }
+
+        button{
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 6px;
+            background-color: #2fe096;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover{
+            background-color: #ecf00b;
+        }
+    </style>
+    <div id="app">
+        <h1>Contador Vue</h1>
+        <p>Contador: {{ counter }}</p>
+        <button @click="increment">Incrementar</button>
+        <button @click="decrement">Decrementar</button>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return {
+                    counter: 0,
+                };
+            },
+            methods: {
+                increment(){
+                    this.counter++;
+                },
+                decrement(){
+                    this.counter--;
+                },
+            },
+        });
+        app.mount('#app');
+    </script>
+</body>
+</html>
